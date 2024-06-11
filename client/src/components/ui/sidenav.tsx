@@ -48,10 +48,7 @@ const Sidenav: React.FC = () => {
         </div>
 
         <ul className="!overflow-visible">
-          {workspaces.length === 0 ? (
-            <SkeletonLoader />
-          ) : (
-            <>
+          
               {sortedChats.map((workspace: Workspace) => {
                 if (!workspace) return null;
                 return (
@@ -65,8 +62,6 @@ const Sidenav: React.FC = () => {
                   />
                 );
               })}
-            </>
-          )}
           <SidenavItem
             title="Create Workspace"
             href="/workspace/new"
