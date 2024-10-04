@@ -12,14 +12,14 @@ import config from "../config";
  */
 export async function embedChunks(chunks: string[]): Promise<any> {
   // You can use any embedding model or service here.
-  // In this example, we use OpenAI's text-embedding-3-small model.
+  // In this example, we use OpenAI's text-embedding-ada-002 model.
   const openai = new OpenAI({
     apiKey: config.openAiApiKey,
     organization: config.openAiOrganizationId,
   });
   try {
     const response = await openai.embeddings.create({
-      model: "text-embedding-3-small",
+      model: "text-embedding-ada-002",
       input: chunks,
       encoding_format: "float",
       dimensions: 1536,
